@@ -190,3 +190,82 @@ xx.jpg/xx.php，不全,请小伙伴们在评论处不吝补充，谢谢！
 31.在win2003服务器中建立一个 .zhongzi文件夹用意何为？
 
 · 隐藏文件夹，为了不让管理员发现你传上去的工具。
+
+32、sql注入有以下两个 测试 选项，选一个并且阐述不选另一个的理由：
+
+.A. demo.jsp?id=2+1       B. demo.jsp?id=2-1
+
+.选B，在 URL 编码中 + 代表空格，可能会造成混淆
+
+33、以下链接存在 sql 注入漏洞，对于这个变形注入，你有什么思路？
+
+.demo.do?DATA=AjAxNg==
+
+.DATA有可能经过了 base64 编码再传入服务器，所以我们也要对参数进行 base64 编码才能正确完成测试
+
+34、发现 demo.jsp?uid=110 注入点，你有哪几种思路获取 webshell，哪种是优选？
+
+.有写入权限的，构造联合查询语句使用using INTO OUTFILE，可以将查询的输出重定向到系统的文件中，这样去写入 WebShell
+
+.使用 sqlmap –os-shell 原理和上面一种相同，来直接获得一个 Shell，这样效率更高
+
+.通过构造联合查询语句得到网站管理员的账户和密码，然后扫后台登录后台，再在后台通过改包上传等方法上传 Shell
+
+35、CSRF 和 XSS 和 XXE 有什么区别，以及修复方式？
+
+.XSS是跨站脚本攻击，用户提交的数据中可以构造代码来执行，从而实现窃取用户信息等攻击。修复方式：对字符实体进行转义、使用HTTP Only来禁止JavaScript读取Cookie值、输入时校验、浏览器与Web应用端采用相同的字符编码。
+  
+.CSRF是跨站请求伪造攻击，XSS是实现CSRF的诸多手段中的一种，是由于没有在关键操作执行时进行是否由用户自愿发起的确认。修复方式：筛选出需要防范CSRF的页面然后嵌入Token、再次输入密码、检验Referer
+
+.XXE是XML外部实体注入攻击，XML中可以通过调用实体来请求本地或者远程内容，和远程文件保护类似，会引发相关安全问题，例如敏感文件读取。修复方式：XML解析库在调用时严格禁止对外部实体的解析。
+
+36、CSRF、SSRF和重放攻击有什么区别？
+
+.CSRF是跨站请求伪造攻击，由客户端发起
+
+.SSRF是服务器端请求伪造，由服务器发起
+
+.重放攻击是将截获的数据包进行重放，达到身份认证等目的
+
+37、说出至少三种业务逻辑漏洞，以及修复方式？
+
+.密码找回漏洞中存在密码允许暴力破解、存在通用型找回凭证、可以跳过验证步骤、找回凭证可以拦包获取等方式来通过厂商提供的密码找回功能来得到密码
+
+.身份认证漏洞中最常见的是会话固定攻击和 Cookie 仿冒，只要得到 Session 或 Cookie 即可伪造用户身份
+
+.验证码漏洞中存在验证码允许暴力破解、验证码可以通过 Javascript 或者改包的方法来进行绕过
+
+38、圈出下面会话中可能存在问题的项，并标注可能会存在的问题？
+
+　　get /ecskins/demo.jsp?uid=2016031900&keyword=”hello world”
+  
+　　HTTP/1.1Host:*******.com:82User-Agent:Mozilla/
+  
+　　5.0 Firefox/40Accept:text/css,*/*;q=0.1
+  
+　　Accept-Language:zh-CN;zh;q=0.8;en-US;q=0.5,en;q=0.3
+  
+　　Referer:http://*******.com/eciop/orderForCC/
+  
+　　cgtListForCC.htm?zone=11370601&v=145902
+  
+　　Cookie:myguid1234567890=1349db5fe50c372c3d995709f54c273d;
+  
+　　uniqueserid=session_OGRMIFIYJHAH5_HZRQOZAMHJ;
+  
+　　st_uid=N90PLYHLZGJXI-NX01VPUF46W;
+  
+　　status=True
+  
+　　Connection:keep-alive
+  
+　　11
+  
+39、找一类你最擅长的漏洞，谈下绕过漏洞修复后的方案？
+
+40、你常用的渗透工具有哪些，最常用的是哪个？
+
+41、描述一个你深入研究过的 CVE 或 POC。
+  
+42、谈谈你经常关注的安全平台？
+  
