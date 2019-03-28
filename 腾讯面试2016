@@ -1,0 +1,514 @@
+不定项选择题-30
+1 应用程序开发过程中，下面那些开发习惯可能导致安全漏洞？（）
+A  在程序代码中打印日志输出敏感信息方便调式
+B 在使用数组前判断是否越界
+C 在生成随机数前使用当前时间设置随机数种子
+D 设置配置文件权限为rw-rw-rw-
+
+答案：AD
+解释：
+A 为日志包含敏感信息，容易泄露账号密码接口数据等信息，可能产生安全漏洞。
+B 为数组大小问题，数组不越界，可防止溢出安全漏洞。因此是安全的。
+C 用当前时间来作为随机数种子的话，随着时间的不同，生成的随机数也会不同。因此是安全的。
+D 为配置文件的权限问题，rw为可以读取可以写入。第一个rw-为文件所属用户、第二个rw-为用户所在组、第三个rw-为其它用户的读写。可以导致非法写入和越权访问，可能产生安全漏洞。
+
+2 以下哪些工具提供拦截和修改HTTP数据包的功能?（）
+A Burpsuite
+B Hackbar
+C Fiddler
+D Nmap
+
+答案：AC
+解释：
+A Burpsuite是可以通过设置浏览器代理进行网络渗透的，用于攻击Web应用的集成平台。可以进行拦截和修改HTTP数据包。
+B Hackbar 是用来进行sql注入、测试XSS和加解密字符串的。可以用来快速构建一个HTTP请求（GET/POST）等。但是不能拦截和修改HTTP数据包。
+C Fiddler是一个http协议调试代理工具，它能够记录并检查所有你的电脑和互联网之间的http通讯。可以进行拦截和修改HTTP数据包。
+D Nmap是一款网络端口扫描工具，可以扫描各种端口及其服务甚至是漏洞检测。但是不能不能拦截和修改HTTP数据包。
+
+3 坏人通过XSS漏洞获取到QQ用户的身份后，可以进行一下操作?（）
+A 偷取Q 币
+B 控制用户摄像头
+C 劫持微信用户
+D 进入QQ空间
+
+答案：D
+解释：
+XSS漏洞是获取用户cookie的，即是获得用户cookie等敏感信息。
+A 偷取Q币。需要用户进行确认或者输入密码，具有很强的交互性。因此无法进行。
+B 控制用户用户摄像头。因为开启摄像头，需要用户手动确认。因此无法进行。
+C 劫持微信用户。因为微信登录会验证手机信息甚至短信验证，并且只能同时在一个设备上登录一个微信账号。因此无法进行。
+D 进入QQ空间。 因为登录QQ空间是不需要用户交互操作的，并且使用cookie获得用户身份后，就好像正常用户一样可以查看QQ空间，QQ资料等。
+
+4 以下哪些工具可以抓取HTTP数据包？（）
+A Burpsuite
+B Wireshark
+C Fiddler
+D Nmap
+
+答案：ABC
+解释：
+A Burpsuite是可以通过设置浏览器代理进行网络渗透的，用于攻击Web应用的集成平台。因此是可以HTTP数据包。
+B Wireshark是监听网络接口数据的，可以设置监听某个网卡来监听各种网络数据包。因此是可以抓取HTTP数据包。
+C Fiddler是一个http协议调试代理工具，它能够记录并检查所有你的电脑和互联网之间的http通讯。因此是可以抓取HTTP数据包。
+D Nmap是一款网络端口扫描工具，可以扫描各种端口及其服务甚至是漏洞检测。但是不能抓取HTTP数据包。
+
+5 以下哪些说法是正确的？（）
+A IOS系统从IOS6开始引入kernelASLR安全措施
+B 主流的Iphone手机内置了AES及RSA硬件加速解密引擎
+C 安卓系统采用了安全引导链（secureboot chain ），而IOS系统则未采用
+D Android 4.1 系统默认启用了内存ASLR 
+
+答案：ABD
+解释：
+A IOS系统从IOS6开始引入kernelASLR安全措施。情况属实。因此是正确的。
+B 主流的Iphone手机内置了AES及RSA硬件加速解密引擎。情况属实。因此是正确的。
+C 安卓系统采用了安全引导链（secureboot chain ），而IOS系统则未采用。情况不属实，原因是IOS系统也采用了安全引导链。因此是不正确的。
+D Android 4.1 系统默认启用了内存ASLR。情况属实。因此是正确的。
+
+6 以下哪些是常见的PHP ’ 一句话木马“ ？ （）
+A < ?php assert ($_POST(value));?>
+B <%execute(request("value"))%>
+C <?php @eval ($_POST(value)):?>
+D<%if(request.getParameter("!")!=null)(newjavio.FileOutputStream(application.getRealPath("\\") + request.getParmeter("!"))).write (request.getParameter("t").getByte())):%>
+
+答案：ABCD
+解释：
+A  assert用来判断一个表达式是否成立，可以远程连接。可为PHP一句话木马。
+B execute 用来执行表达式，可以执行某些操作。可为asp一句话木马。
+C eval 实现php对表达式的计算和执行，可以用来执行某些操作。可为PHP一句话木马。
+D 通过判断执行文件输出写入，故为一句话木马。
+
+7 以下哪个说法是正确的？（）
+A xcodeghost 是一种可以直接远程控制手机控制权的攻击方式
+B wormhole是一种可以直接远程控制手机控制权的攻击方式
+C ” 心脏滴血“ 是一种可以直接远程控制手机控制权的攻击方式
+D shellshock是一种可以直接远程控制手机控制权的攻击方式
+答案：A
+解释：
+A 通过Xcode从源头注入病毒XcodeGhost，是一种针对苹果应用开发工具Xcode的病毒。于2015年9月被发现。它的初始传播途径主要是通过非官方下载的Xcode 传播，通过CoreService 库文件进行感染。当应用开发者使用带毒的Xcode工作时，编译出的App 都将被注入病毒代码，从而产生众多带毒APP。用户在iOS设备上安装了被感染的APP后，设备在接入互联网时APP会回连恶意URL地址init.icloud-analysis.com，并向该URL上传敏感信息(如设备型号、iOS 版本)。回连的C&C服务器会根据获取到的设备信息下发控制指令，从而完全控制设备，可以在受控设备上执行打开网页、发送短信、拨打电话、打开设备上所安装的其他APP等操作。
+因此xcodeghost是一种可以直接远程控制手机控制权的攻击方式。
+B 百度SDK虫洞漏洞相关的核心代码存在于SDK的com.baidu.hello.moplus中，所有使用该SDK开发的APP，均会开放40310端口响应数据请求。虽然请求限制在本地进行，但攻击者仍然很容易绕过，这可能导致用户数据的大量泄漏。百度旗下应用安装到手机上之后，它会打开40310/6259端口，任何IP都可以连接该端口。被百度称为immortalservice的HTTP服务监视来自该端口的信息，之所以被称为immortal（不朽），原因是它“会在后台一直运行，并且如果你手机中装了多个有wormhole漏洞的app，这些app会时刻检查40310/6259端口，如果那个监听40310/6259端口的app被卸载了，另一个app会 立马启动服务重新监听40310/6259端口。 ”连接端口的IP需要验证一些头文件，但很容易通过伪装绕过。成功与该服务进行通讯后，就可以通过URL给APP下达指令，攻击者可以从用户设备远程获取位置信息，搜索框信息，包信息和其它敏感数据。它可以在用户设备上远程添加联系人，扫描下载文件，上传特定文件。所有这些行为只需简单的通过发送HTTP请求便可以完成。因为在本地HTTP服务（由Moplus SDK建立的）中没有进行身份认证，使得攻击行为不仅可以通过app开发者，也可以由任何其它人来触发。只需一个命令，攻击者或者网络罪犯就可以远程控制感染的设备。此外，他们只需要使用nmap进行全网段扫描，测试TCP端口6259或40310的状态，端口状态为OPEN的所有Android设备都可能被远程控制。需要注意的是在同一个局域网内，以及在同一个的3G/ 4G网络的所有设备都可以被攻击。
+因此wormhole是一种可以直接远程控制手机控制权的攻击方式。
+C Heartbleed漏洞，这项严重缺陷(CVE-2014-0160)的产生是由于未能在memcpy()调用受害用户输入内容作为长度参数之前正确进行边界检查。攻击者可以追踪OpenSSL所分配的64KB缓存、将超出必要范围的字节信息复制到缓存当中再返回缓存内容，这样一来受害者的内存内容就会以每次64KB的速度进行泄露。通过读取网络服务器内存，攻击者可以访问敏感数据，从而危及服务器及用户的安全。敏感的安全数据，如服务器的专用主密钥，可使攻击者在服务器和客户端未使用完全正向保密时，通过被动中间人攻击解密当前的或已存储的传输数据，或在通信方使用完全正向保密的情况下，发动主动中间人攻击。攻击者无法控制服务器返回的数据，因为服务器会响应随机的内存块。[8] 
+漏洞还可能暴露其他用户的敏感请求和响应，包括用户任何形式的POST请求数据，会话cookie和密码，这能使攻击者可以劫持其他用户的服务身份。在其披露时，约有17%或五十万通过认证机构认证的互联网安全网络服务器被认为容易受到攻击。电子前哨基金会，ArsTechnica，和布鲁斯·施奈尔都认为心脏出血漏洞是“灾难性的”。[8] 
+漏洞让特定版本的openSSL成为无需钥匙即可开启的“废锁”，入侵者每次可以翻检户主的64K信息，只要有足够的耐心和时间，就可以翻检足够多的数据，拼凑出户主的银行密码、私信等敏感数据。对此安全专家提醒，网友在网站完成修复升级后，仍需及时修改原来的密码。
+因此 ” 心脏滴血“ 不是一种可以直接远程控制手机控制权的攻击方式，而是一种窃取用户信息的攻击方式。
+D Shellshock，又称Bashdoor，是在Unix中广泛使用的Bash shell中的一个安全漏洞，首次于2014年9月24日公开。许多互联网守护进程，如网页服务器，使用bash来处理某些命令，从而允许攻击者在易受攻击的Bash版本上执行任意代码。这可使攻击者在未授权的情况下访问计算机系统。执行命令envx='() { :;}; echo Shellshock' bash -c "exit"如果有输出，就说明存在该漏洞。只要是能通过某种手段为bash传递环境变量的程序都受此影响。当然最典型的的就是bash写的CGI程序了，客户端通过在请求字符串里加入构造的值，就可以轻松攻击运行CGI的服务器。
+因此shellshockbu不是一种可以直接远程控制手机控制权的攻击方式，而是可以直接远程控制服务器控制权的攻击方式。
+
+8 在同一个bash 下依次执行
+root@kali：~/Desktop#  whoami
+root
+root@kali：~/Desktop# function whoami() { echo 1;}
+root@kali：~/Desktop# whoami
+最后一次执行的whoami 的结果是什么？（）
+A root
+B 1 
+C echo 1
+D echo 1;
+
+答案：B 
+解释：第一次执行whoami 是正常显示 root.。functionwhoami() { echo 1;} 通过定义函数whoami ， 使得whoami 是一个函数，而初始化值为echo 1 ，而echo 1 的执行结果是1。也就是说，通过调用函数whoami 并且初始化(执行echo函数)，所以输出结果为1。
+
+9 以下哪个攻击可用来运行ddos攻击？（）
+A 菜刀
+B WSI
+C Dosend
+D Chkrootkit
+答案：C
+解释：
+A 中国菜刀是一款专业的网站管理软件。
+B WSI是PHP注入工具。
+C Dosend是一款linux发包攻击工具，可用来实现DDOS攻击。参考链接为http://download.csdn.net/detail/linghuncangsang/6664547
+D chkrootkit是用来检测rootkit的。
+
+10 以下哪些服务器曾被发现文件解析漏洞？（）
+A Apache
+B IIS
+C nginx
+D squid
+
+答案：ABC
+A Apache解析漏洞。它 是从右到左开始判断解析,如果为不可识别解析,就再往左判断.
+比如upupimage.php.owf.rar “.owf”和”.rar”?这两种后缀是apache不可识别解析,apache就会把upupimage.php.owf.rar解析成php.
+B IIS 解析漏洞。一是IIS5.x/6.0中的/xx.asp/xx.jpg ，网站下建立文件夹的名字为.asp、.asa 的文件夹，其目录内的任何扩展名的文件都被IIS当作asp文件来解析并执行。
+二 是123.asp;.jpg会被服务器看成是123.asp，IIS6.0 默认的可执行文件除了asp还包含这三种/upupimage.asa/upupimage.cer /upupimage.cdx 
+C nginx解析漏洞。一是nginx默认Fast-CGI开启状况下,黑阔上传一个名字为upupimage.jpg，内容为<?PHPfputs(fopen('shell.php','w'),'<?php eval($_POST[cmd])?>');?>的文件，然后访问upupimage.jpg/.php,在这个目录下就会生成一句话木马 shell.php。
+二是Nginx在图片中嵌入PHP代码然后通过访问xxx.jpg%00.php来执行其中的代码，影响版:0.5.,0.6.,0.7 <= 0.7.65, 0.8 <= 0.8.37
+D Squid爆出来的更多是拒绝服务攻击。它是一个高效的Web缓存及代理程序，最初是为Unix平台开发的，现在也被移植到Linux和大多数的Unix类系统中，最新的Squid可以运行在Windows平台下。
+
+11 以下命令可以用来获取DNS记录的是？（）
+A traceroute
+B ping
+C dig
+D who
+答案：C
+解释：
+A traceroute 。该命令为追踪路由情况。
+B ping 。该命令为检测网络是否通畅。
+C dig 。linux下查询域名解析有两种选择,nslookup或者dig，如 digwww.csdn.net
+D who 。该命令为查询登录linux系统的用户数目。
+
+12 linux 环境下，查询日志文件最后100行数据，正确的方式是？（）
+A mv -100 log
+B grep -100 log
+C cat -100 log
+D tail -100 log
+答案：D
+解释：
+A mv -100 log 。该为mv命令，是移动文件或者文件夹的，与查看日志无关。
+B grep -100 log 。该为grep命令，是筛选或者匹配关键词的，与查看日志无关，但是可以配合其他命令进行查看日志。
+C cat -100 log 。该命令为顺序查看命令，查看log的前一百行数据（包括空行）。
+D tail -100 log。 该命令为倒序查看名，查询log文件的最后100行数据。故选择D
+
+13 Firefox浏览器插件Hacbar提供的功能（）
+A POST方式提交数据
+B BASE64编码和解码
+C 代理修改WEB页面的内容
+D修改浏览器访问referer
+答案：ABD
+解释：
+A POST方式提交数据。通过在hackbar勾选”Enablepost data"，hackbar可以显出示该功能。
+B BASE64编码和解码。通过在hackbarc菜单栏”Encoding"，hackbar可以显出示该功能。
+C 代理修改WEB页面的内容。该功能属于插件firebug的。hackbar 无该项功能。
+D修改浏览器访问referer。通过在hackbar勾选”EnableReferer "，hackbar可以显出示该功能。
+
+14 以下哪个攻击可以提供拦截和修改http数据包功能？（）
+A Metasploit
+B Hackbar
+C Sqlmap 
+D Burpsuite
+答案：D
+
+解释：
+A Metasploit 。 它为集成的漏洞攻击平台，具有多种攻击载荷和shell。但是无法提供拦截和修改http数据包。
+B Hackbar 是用来进行sql注入、测试XSS和加解密字符串的。可以用来快速构建一个HTTP请求（GET/POST）等。但是不能拦截和修改HTTP数据包。
+C Sqlmap  是用来进行sql注入，获取数据库信息和获操作系统信息，甚至注入后门webshell的，但是不能拦截和修改HTTP数据包。
+D Burpsuite是可以通过设置浏览器代理进行网络渗透的，用于攻击Web应用的集成平台。可以进行拦截和修改HTTP数据包。
+
+15 以下哪几种工具可以对网站进行自动化web漏洞扫描？（）
+A hackbar
+B AWVS
+C IBM appscan
+D Nmap
+
+答案：BC
+解释：
+A hackbar 是用来进行sql注入、测试XSS和加解密字符串的。可以用来快速构建一个HTTP请求（GET/POST）等。但是不能自动化web 漏洞扫描
+B AWVS 是业界非常推荐的漏洞扫描神器，它拥有数目非常多而且最强大的漏洞检测脚本，国内多数人使用破解版，它可以进行自动化web漏洞扫描。
+C IBM appscan 是国外IBM安全公司的一款非常厉害的安全漏洞扫描产品，能够扫描各种生产环境的WEB，也就是说它也可以进行自动化web 漏洞扫描。
+D Nmap是一款网络端口扫描工具，可以扫描各种端口及其服务甚至是系统漏洞检测，从它的NSE脚本可以看到它也可以进行WEB漏洞扫描，但是需要复杂的配置命令，故它不能进行自动化web漏洞扫描。
+答案：BC
+
+16. 黑客控制一台Windows服务器，发现IE浏览器使用了代理，可以访问外网，执行如下命令发现
+C:\Users\test>ping www.baidu.com -n 1
+正在 Pingwww.a.shifen.com [14.215.177.38] 具有32字节的数据：
+请求超时
+C:\Users\test>telnet www.baidu.com 80
+正在链接www.baidu.com...无法打开到主机的连接。
+在端口 80: 连接失败。
+通过如上信息判断，以下哪些反弹shell操作会失败
+
+A windows/meterpreter/reverse_http
+B icmp协议的后门
+C windows/meterpreter/reverse_https
+D windows/meterpreter/reverse_tcp
+
+答案: ABCD
+解释：IE浏览器使用了代理，可能HTTP协议会受到防火墙限制，故A不对；ping不通百度说明ICMP协议也受影响。故http、https、icmp协议的反弹shell都会失败，D也是不对的，对方挂了代理，telnet不通，只有通过插入挂了代理的IE进程反弹，或者通过代理反弹.
+
+17 关于XcodeGhost事件的正确说法是（）
+A 部分Android 产品 也受到了影响
+B 应用程序开发使用了包含后门插件的IDE
+C 当手机被盗时才有风险
+D苹果官方回应APPSTORE上的应用程序不受影响
+答案：AB
+解释：通过Xcode从源头注入病毒XcodeGhost，是一种针对苹果应用开发工具Xcode的病毒。于2015年9月被发现。它的初始传播途径主要是通过非官方下载的Xcode 传播，通过CoreService 库文件进行感染，安卓用了Unity和Cocos2d的也受影响，当应用开发者使用带毒的Xcode工作时，编译出的App 都将被注入病毒代码，从而产生众多带毒APP。用户在iOS设备上安装了被感染的APP后，设备在接入互联网时APP会回连恶意URL地址init.icloud-analysis.com，并向该URL上传敏感信息(如设备型号、iOS 版本)。回连的C&C服务器会根据获取到的设备信息下发控制指令，从而完全控制设备，可以在受控设备上执行打开网页、发送短信、拨打电话、打开设备上所安装的其他APP等操作。苹果官方当时下架相关的应用。
+故XcodeGhost，是一种针对苹果应用开发工具的病毒，它是应用程序开发使用了包含后门插件的IDE，手机下了含有XCODE病毒的应用就会受到影响，苹果官方回应，APPSTORE上的应用程序是受到影响，并且下架了一部分受影响的应用，并且部分android产品也受到影响。
+
+18 Android 应用中导致HTTPS中间人攻击的原因有？（）
+A 没有对SSL证书校验 
+B 没有对主机名进行校验
+C SSL证书被泄露
+D 使用WIFI连接网络
+
+答案: ABC
+解释：
+A 没有对SSL证书校验 。
+B 没有对主机名进行校验
+C SSL证书被泄露
+D 使用WIFI连接网络
+
+答案: ABC
+解释：
+Android 应用中导致HTTPS漏洞的分析：
+1)中间人攻击漏洞位置:
+X509TrustManager 、HostnameVerifier、setHostnameVerifier (X509HostnameVerifier hostnameVerifier)
+2) 漏洞触发前提条件：
+自定义的X509TrustManager不校验证书；
+或实现的自定义HostnameVerifier不校验域名接受任意域名；
+或使用setHostnameVerifier(ALLOW_ALL_HOSTNAME_VERIFIER)；
+3) 漏洞原理：
+由于客户端没有校验服务端的证书，因此攻击者就能与通讯的两端分别创建独立的联系，并交换其所收到的数据，使通讯的两端认为他们正在通过一个私密的连接与对方直接对话，但事实上整个会话都被攻击者完全控制。在中间人攻击中，攻击者可以拦截通讯双方的通话并插入新的内容。
+客户端不校验SSL证书（包含签名CA是否合法、域名是否匹配、是否自签名证书、证书是否过期）包含以下几种编码错误情况：
+a. 自实现的不校验证书的X509TrustManager接口的Java代码片段 (其中的checkServerTrusted()方法实现为空，即不检查服务器是否可信):
+b. 不检查站点域名与站点证书的域名是否匹配的Java代码片段:
+c. 接受任意域名的Java代码片段：
+A 没有对SSL证书校验 -----》》》客户端自定义的X509TrustManager不校验证书；，攻击者冒用证书
+B 没有对主机名进行校验----》》》客户端实现的自定义HostnameVerifier不校验域名接受任意域名，攻击者可以使用域名冒用
+C SSL证书被泄露----》》》》 证书颁发机构(Certification Authority)被攻击导致私钥泄露等。攻击者可通过中间人攻击，盗取账户密码明文、聊天内容、通讯地址、电话号码以及信用卡支付信息等敏感信息，甚至通过中间人劫持将原有信息替换成恶意链接或恶意代码程序，以达到远程控制、恶意扣费等攻击意图。
+D 使用WIFI连接网络----《《《客户端使用WIFI连接对于HTTPS传输来说，不会受到影响。因为重点是中间人漏洞攻击的位置和触发条件不会受到网络类型的影响。
+
+19. 下图为AES加密的明文和密文字符串，请问该加密使用了哪种分组模式
+加密前：
+0000000000000000
+0000000000000000
+0000000000000000
+000000000000000
+加密后：
+fbcd723ec4f10af24a9472349f722954
+fbcd723ec4f10af24a9472349f722954
+fbcd723ec4f10af24a9472349f722954
+13d7ffbfe87a41c1fef1f429af20babc
+
+答案：B
+解释：
+
+ECB：是一种基础的加密方式，密文被分割成分组长度相等的块（不足补齐），然后单独一个个加密，一个个输出组成密文。
+CBC：是一种循环模式，前一个分组的密文和当前分组的明文异或操作后再加密，这样做的目的是增强破解难度。
+CFB/OFB实际上是一种反馈模式，目的也是增强破解的难度。
+ECB和CBC的加密结果是不一样的，两者的模式不同，而且CBC会在第一个密码块运算时加入一个初始化向量。
+
+20这段代码存在的安全问题，会产生什么安全漏洞？（）
+<?php
+$username = $_GET(username);
+echo $uername
+mysql_query("select * from orders where username = "$username"or dir (mysql_error():
+?>
+A 命令执行漏洞
+B SQL注入漏洞
+C 文件包含漏洞
+D 反射XSS漏洞
+
+答案：ABD
+解释：
+A 命令执行漏洞--->>>>$username = $_GET(username);echo $uername 参数不过滤，可以将username设置某个命令。
+B SQL注入漏洞--->>>>mysql_query("select* from orders where username = "$username "or dir (mysql_error(): 参数不过滤，可以将username设置某个带截断的查询语句。
+C 文件包含漏洞--->>>>该代码中部设计文件操作。
+D 反射XSS漏洞---->>>参数过滤不严格，可以输入username=<script>alert(1)</script>
+21 以下哪些是CSRF漏洞的防御方案?（）
+A 检测HTTPreferer 字段同域
+B 限制sessioncookie的生命周期
+C 使用验证码
+D cookie关键字段设置HttpOnly属性
+
+答案：ABCD
+解释：
+CSRF漏洞防御主要可以从三个层面进行，即服务端的防御、用户端的防御和安全设备的防御。
+A 检测HTTPreferer 字段同域---》》》》根据HTTP协议，在HTTP头中有一个字段叫Referer，它记录了该HTTP请求的来源地址。在通常情况下，访问一个安全受限页面的请求必须来自于同一个网站。比如某银行的转账是通过用户访问http://bank.test/test?page=10&userID=101&money=10000页面完成，用户必须先登录bank.test，然后通过点击页面上的按钮来触发转账事件。当用户提交请求时，该转账请求的Referer值就会是转账按钮所在页面的URL（本例中，通常是以bank. test域名开头的地址）。而如果攻击者要对银行网站实施CSRF攻击，他只能在自己的网站构造请求，当用户通过攻击者的网站发送请求到银行时，该请求的Referer是指向攻击者的网站。因此，要防御CSRF攻击，银行网站只需要对于每一个转账请求验证其Referer值，如果是以bank. test开头的域名，则说明该请求是来自银行网站自己的请求，是合法的。如果Referer是其他网站的话，就有可能是CSRF攻击，则拒绝该请求
+B 限制sessioncookie的生命周期---》》》CSRF攻击是有条件的，当用户访问恶意链接时，认证的cookie仍然有效，所以当用户关闭页面时要及时清除认证cookie
+C 使用验证码---》》》虽然攻击者已经通过获取cookie得到用户的身份，但是通过在你的表单中包括验证码，事实上网站已经消除了跨站请求伪造攻击的风险。可以在任何需要执行操作的任何表单中使用这个流程。
+D cookie关键字段设置HttpOnly属性-----》》》》可以在一定程度防御CSRF。
+
+22 android manifest.xml中哪项配置可能造成安卓内部文件被窃取？（）
+A android：allowbackup=“ true "
+B Android:name = " con.trsc"
+C Android: debug = " true "
+D Androidtarget sdkversion = "17"
+
+答案：ABC
+解释：
+A android：allowbackup=“ true "----》》》》允许app备份，可以导致其他app非法访问这些数据
+B Android:name = " con.trsc"---》》》》没有设置成私有，可以导致非法越权访问
+C Android: debug = " true "---》》》通过调式，可以调用查看其他文件
+D Androidtarget sdkversion = "17"----》》》》sdk版本信息
+
+
+23 以下哪些工具可以抓取windows明文密码？（）
+A WCE
+B minikatz
+C Quarks PWdump
+D CAIN
+
+答案：AB
+A WCE是与gethashes 和mimikatz齐名的一款hash管理工具，使用wce进行本地和域的hash注入 ，可以在高权限下获取明文密码
+B 法国一个牛B的人写的轻量级调试器，可以帮助安全测试人员抓取Windows密码。mimikatz 2.0版本，抓密码命令更加简单了，新功能还包括能够通过获取的kerberos登录凭据，绕过支持RestrictedAdmin模式的win8或win2012svr的远程终端(RDP) 的登陆认证
+C Quarks PwDumpQuarks PwDump 是一个Win32环境下的系统授权信息导出工具，目前除此之外没有任何一款工具可以导出如此全面的信息，支持这么多的OS版本，且相当稳定。它目前可以导出 :- Local accounts NT/LM hashes + history 本机NT/LM哈希+历史登录记录 – Domain accounts NT/LM hashes + history 域中的NT/LM哈希+历史登录记录 – Cached domain password 缓存中的域管理密码 – Bitlocker recovery information (recovery passwords & key packages) 使用Bitlocker的恢复后遗留的信息支持的操作系统 : XP/2003/Vista/7/2008/81 / USAGE
+D CAIN主要用于网络数据嗅探，也带有密码破解功能，但是不能抓取windows明文密码
+
+24. 如果一个网站存在CSRF漏洞，可以通过CSRF漏洞做下面哪些事情
+A 获取网站用户注册的个人资料信息
+B 修改网站用户注册的个人资料信息
+C 冒用网站用户的身份发布信息
+D 以上都可以
+
+答案：D
+
+解释：CSRF成功后，攻击者可以获取到用户身份，所以攻击者可以获取用户的个人资料，甚至是冒用网站用户发布信息。但是一个网站存在CSRF，这个说法可能是某处存在该漏洞或者整个网站都存在。至于在修改或者冒用用户发布信息，这个要依据整个网站的安全架构来说，如果一个网站设置了修改用户个人资料和发布信息都需要验证码或者需要个人手机短信的再次验证，这个就难说了。当然这里我们从最简单的角度考虑，A、B、C都在小网站都可以实现。
+
+25. 以下关于cc攻击说法正确的是
+A cc攻击需要借助代理进行
+B cc攻击利用的时tcp协议的缺陷
+C cc攻击难以获取目标机器的控制权
+D cc攻击最早在国外大面积流行
+
+答案: ACD
+
+解释：攻击者借助代理服务器生成指向受害主机的合法请求，可以通过TCP/IP进行，本质是模拟多个用户不停访问页面，导致该页面的服务无法处理过多请求，从而导致服务器宕机或者拒绝服务。
+
+26. Android开发过程中，下面哪些开发习惯可能导致安全漏洞
+A 在程序代码中插入Log()方法输出敏感信息方便调试
+B 在应用正式版Andoridmanifest.xml中设置android:debuggable=”false”
+C 使用SecureRandom时使用安全的方法设置seed
+D 设置应用配置文件为任意用户可读写
+
+答案：AD
+
+解释：
+
+A 在程序代码中插入Log()方法输出敏感信息方便调试-----》》》》该方式可以在日志中泄露登录的密码，可导致安全漏洞。
+B 在应用正式版Andoridmanifest.xml中设置android:debuggable=”false”----》》》》》》这个可以防止不法分子对应用进行调式，有一定的安全效果。当然通过JD或者JEB逆向后，将” false“ 改成 ” true“ 的情况，另当别说。
+C 使用SecureRandom时使用安全的方法设置seed----》》》》》这个可以产生安全的随机数。
+D 设置应用配置文件为任意用户可读写----》》》》》这个会导致非法用户越权访问敏感信息，可导致安全漏洞。
+
+27. iOS平台上常见的Hook框架有
+A Xposed
+B Intent Fuzz
+C Drozer
+D Substrate
+
+答案:D
+
+解释：
+
+A Xposed----》》》这个是android的hook框架，有不少开发者发布了不错的框架。
+B Intent Fuzz---》》》这个是android 应用组件模糊测试框架，
+C Drozer----》》这个是android 综合渗透测试平台。
+D Substrate---》》》这个是IOS平台的hook的框架，而Cydia Substrate是android上的强大而实用的HOOK工具。
+
+
+28. php提供以下哪些函数来避免sql注入
+A mysql_real_escape_string
+B escapeshellarg
+C htmlentities
+D addslashes
+
+答案: AD
+解释：
+
+A mysql_real_escape_string-->>>> 该函数通过转义字符串，实现了过滤无效化（消毒）的功能，可以避免sql注入。
+B escapeshellarg-->>>> escapeshellarg — 把字符串转码为可以在 shell 命令里使用的参数，当然这个是转义shell注入的，和sql注入没有太多联系，和命令执行有关。
+C htmlentities--->>>>>>>该函数是字符转换为 HTML 实体，没有避免sqlz注入的功能
+D addslashes--->>>addslashes — 使用反斜线引用字符串,返回字符串，该字符串为了数据库查询语句等的需要在某些字符前加上了反斜线。这些字符是单引号（'）、双引号（"）、反斜线（\）与 NUL（NULL 字符）。实际就是转义。
+
+29. 执行nmap10.5.5.5.1 默认会扫描以下哪个端口
+A 21
+B 3389
+C 8080
+D 1024
+
+答案： AC
+
+解释：nmap 的默认扫描选项是对常规端口和服务进行探测，常规端口是1000个最可能开发的端口
+
+30. 黑客通过以下哪种攻击方式，可能大批量获取网站注册用户的身份信息
+A XSS
+B CSRF
+C 越权
+D 以上都不可以
+
+答案 ABC
+
+解释：
+A XSS--->>>获取管理员的session，从而获得大量注册用户身份信息。
+B CSRF--->>>获取管理员的cookie，从而获得大量注册用户身份信息。
+C 越权-->>> 越权访问其他用户信息。
+
+故以上三个均可以。
+
+0x03 简答题-10
+31. sql注入（mysql数据库）中常用的延时函数是___
+答案：sleep()
+
+32. Linux上查看用户ssh登陆历史的指令last，它读取的日志文件名是___
+答案：/var/log/wtmp
+
+33. 黑客为了清理自己在服务器上操作的指令历史记录，他可以执行什么命令___
+答案：
+~/.bash_history
+history -c
+
+34. 国内历史最久的黑客安全技术峰会是__
+答案： Xcon
+
+35. 2015年百度被曝出的WormHole漏洞的原理是__
+答案：
+wormhole 是百度SDK的部分更新模块登陆验证不够严格，存在被第三方利用的风险。如果你手机中装了多个有wormhole漏洞的app，这些app会时刻检查40310/6259端口，如果那个监听40310/6259端口的app被卸载了，另一个app会 立马启动服务重新监听40310/6259端口。 ”连接端口的IP需要验证一些头文件，但很容易通过伪装绕过。成功与该服务进行通讯后，就可以通过URL给APP下达指令，比如获取用户手机的GPS位 置，给手机增加联系人，下载任意文件到指定路径如果文件是apk则进行安装。
+
+36. aslr是对抗_攻击的技术
+答案：缓冲区溢出
+
+37. windows下查看系统用户列表的命令是__
+答案：net user
+
+38. 当访问web网站某个资源不存在时，返回的HTTP状态码是__
+答案：404
+
+39. 被称为“XSS终结者”的使用HTTP头部来限制资源的策略是__
+答案：同源策略
+
+40. C语言中字符串“学习C”所占的内存空间大小可能是___字节
+答案：5
+
+解释：
+
+这题有争议
+gb：2+2+1+1 = 6
+utf-8： 3+3+1+1 = 8
+utf-16：2+2+2+2 = 8
+utf-32: 4+4+4+4 = 16
+
+0x04 判断题-10
+41. zmap单次执行可以对多个端口同时扫描
+答案：对
+解释：zmap 的单次执行可以同时扫描多个端口，这也是它号称比nmap 快的原因之一。
+
+42. TCP和UDP协议对比，TCP传送数据更安全
+答案：错
+
+解释：TCP只是传输可靠，UDP只是最大地交付。严格来说，两者不存在哪个是否更安全的对比。
+
+43. 用system启动的cmd执行 net use\10.1.1.10\c$”password/user”administrator”提示连接成功，然后在administrator用户下net use可以看到连接
+答案： IPC    localhost   10.1.1.10: 135      ESTABLISH
+解释：这个用法比较少见。net use h: \\ip\c$ "密码" /user:"用户名" 直接登陆后映射对方C：到本地为H:本质是ipct通道的用法
+
+44. Redis常用的默认端口是873
+答案：错
+解释：Redis 默认情况下，会绑定在0.0.0.0:6379，这样将会将Redis服务暴露到公网上，如果在没有开启认证的情况下，可以导致任意用户在可以访问目标服务器的情况下未授权访问Redis以及读取Redis的数据。攻击者在未授权访问Redis的情况下可以利用Redis的相关方法，可以成功将自己的公钥写入目标服务器的/root/.ssh 文件夹的authotrized_keys文件中，进而可以直接登录目标服务器。
+
+45. DES、RC4均属于对称加密算法
+答案：对
+解释：常见的非对称加密算法有;RSA、Diffie-Hellman(DH) 、椭圆曲线算法(ECC). 其中使用最广泛的是RSA算法。常见的对称加密算法有：DES算法，3DES算法，TDEA算法，Blowfish算法，RC5算法，IDEA算法。
+
+0x05 分析题-2
+46. 某应用程序需要完成用户输入密码登陆的操作，通过网络与服务器交互进行校验，请设计一个安全的网络传输方案，并说明原因。（出于性能方面的考虑，不使用https通信）
+参考设计：
+1 首先在用户输入密码时，加上比较复杂的验证码，同时以时间戳加密生成随机数，加上csrf_token等
+
+2 然后再把用户账号密码通过前端加密传输到服务器后台，并且设置同源策略，
+
+3 服务器验证客户端的身份后，通过随机安全数加密session和cookie返回给客户端。
+
+4 客户端与服务器建立连接。
+
+47. 外部某平台报告，某网站被黑客上传了Webshell并截图证明。老板指定身为安全工程师的你全权协调处理此事，请思考，你需要做些什么？
+
+参考回答：
+
+1 首先检查服务器上该webshell 存放路径，分析该webshell的行为。
+
+2 清除webshell及其他后门，然后根据webshell入侵的方式，进行修补漏洞，升级程序。
+
+3 对服务器进行安全加固，对服务器上的系统和web服务进行安全设置。
+
+4 综合上述，攥写安全报告（例如首先确定是什么漏洞和服务器上的运维设置导致黑客可以成功上传webshell，如新出现的0day 或者服务器web 的运维配置不当或者弱口令；然后分析了清除了哪些后门，这些后门对服务器造成了哪些影响-盗用了数据库、或者安装了新后门进行DDOS或者其他方面。接着写为避免了这些漏洞，我做了哪些安全加固--修改web服务器配置，对系统进行加固，安装相关的杀毒软件，调整WAF策略等等。最后给出后面定期的安全检查和维护措施。
